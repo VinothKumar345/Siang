@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Health Assistant Chatbot</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f4f7f6;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+/* Chat container */
+
+.chat-container{
+
+width:500px;
+height:650px;
+
+background:white;
+
+border-radius:12px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+display:flex;
+flex-direction:column;
+
+}
+
+/* Header */
+
+.chat-header{
+
+background:#2e8b57;
+
+color:white;
+
+padding:15px;
+
+display:flex;
+align-items:center;
+gap:10px;
+
+}
+
+.chat-header img{
+width:35px;
+}
+
+/* Chat messages */
+
+.chat-box{
+
+flex:1;
+
+padding:20px;
+
+overflow-y:auto;
+
+}
+
+/* Bot message */
+
+.bot{
+
+background:#e8f5f2;
+
+padding:10px 15px;
+
+border-radius:15px;
+
+margin-bottom:10px;
+
+width:70%;
+
+}
+
+/* User message */
+
+.user{
+
+background:#2e8b57;
+
+color:white;
+
+padding:10px 15px;
+
+border-radius:15px;
+
+margin-bottom:10px;
+
+width:70%;
+
+margin-left:auto;
+
+}
+
+/* Input area */
+
+.input-area{
+
+display:flex;
+
+padding:10px;
+
+border-top:1px solid #ddd;
+
+}
+
+input{
+
+flex:1;
+
+padding:10px;
+
+border-radius:6px;
+
+border:1px solid #ccc;
+
+}
+
+/* Buttons */
+
+button{
+
+margin-left:8px;
+
+padding:10px 15px;
+
+background:#2e8b57;
+
+color:white;
+
+border:none;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+/* Voice button */
+
+.voice-btn{
+
+background:#ff7043;
+
+}
+
+/* Quick buttons */
+
+.quick{
+
+padding:10px;
+
+display:flex;
+
+gap:8px;
+
+flex-wrap:wrap;
+
+border-top:1px solid #eee;
+
+}
+
+.quick button{
+
+background:#e8f5f2;
+
+color:black;
+
+border:none;
+
+padding:6px 10px;
+
+border-radius:20px;
+
+font-size:13px;
+
+cursor:pointer;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="chat-container">
+
+<div class="chat-header">
+
+<img src="https://img.icons8.com/fluency/96/chatbot.png" alt="Chatbot icon">
+
+<h3>Smart Health Assistant</h3>
+
+</div>
+
+
+<div class="chat-box" id="chat">
+
+<div class="bot">
+Hello! I am your health assistant. How can I help you today?
+</div>
+
+</div>
+
+
+<div class="quick">
+
+<button onclick="quickMsg('fever')">Fever</button>
+<button onclick="quickMsg('headache')">Headache</button>
+<button onclick="quickMsg('pregnancy care')">Pregnancy Care</button>
+<button onclick="quickMsg('nearest hospital')">Find Hospital</button>
+
+</div>
+
+
+<div class="input-area">
+
+<input type="text" id="userInput" placeholder="Type your health question...">
+
+<button onclick="sendMsg()">Send</button>
+
+<button class="voice-btn" onclick="startVoice()">🎤</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* Send message */
+
+function sendMsg(){
+
+let input=document.getElementById("userInput").value;
+
+if(input=="") return;
+
+let chat=document.getElementById("chat");
+
+chat.innerHTML += '<div class="user">'+input+'</div>';
+
+let response="Please consult a doctor for proper diagnosis.";
+
+if(input.toLowerCase().includes("fever"))
+response="For fever: drink fluids, rest, and take paracetamol.";
+
+else if(input.toLowerCase().includes("headache"))
+response="Headache may be caused by stress or dehydration.";
+
+else if(input.toLowerCase().includes("pregnancy"))
+response="Pregnant women should attend regular health checkups.";
+
+else if(input.toLowerCase().includes("hospital"))
+response="Use the Hospital Finder to locate the nearest clinic.";
+
+chat.innerHTML += '<div class="bot">'+response+'</div>';
+
+document.getElementById("userInput").value="";
+
+chat.scrollTop=chat.scrollHeight;
+
+}
+
+
+/* Quick buttons */
+
+function quickMsg(text){
+
+document.getElementById("userInput").value=text;
+
+sendMsg();
+
+}
+
+
+/* Voice recognition */
+
+function startVoice(){
+
+const recognition = new(window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+recognition.lang="en-US";
+
+recognition.start();
+
+recognition.onresult=function(event){
+
+document.getElementById("userInput").value=event.results[0][0].transcript;
+
+};
+
+}
+
+</script>
+
+</body>
+</html>

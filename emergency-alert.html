@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Emergency Alert</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f4f7f6;
+}
+
+/* Header */
+
+.header{
+background:#d32f2f;
+color:white;
+padding:15px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.header img{
+width:35px;
+}
+
+/* Main container */
+
+.container{
+
+width:700px;
+
+margin:50px auto;
+
+background:white;
+
+padding:40px;
+
+border-radius:12px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+text-align:center;
+
+}
+
+.alert-icon{
+width:120px;
+margin-bottom:20px;
+}
+
+h2{
+color:#d32f2f;
+margin-bottom:10px;
+}
+
+/* Buttons */
+
+button{
+
+padding:12px 20px;
+
+margin:10px;
+
+border:none;
+
+border-radius:6px;
+
+cursor:pointer;
+
+font-size:16px;
+
+}
+
+/* Emergency button */
+
+.alert-btn{
+background:#d32f2f;
+color:white;
+}
+
+/* Call doctor */
+
+.call-btn{
+background:#2e8b57;
+color:white;
+}
+
+/* Location button */
+
+.loc-btn{
+background:#1976d2;
+color:white;
+}
+
+.status{
+
+margin-top:20px;
+
+padding:15px;
+
+background:#fff3e0;
+
+border-radius:10px;
+
+display:none;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<img src="https://img.icons8.com/color/96/siren.png" alt="Siren icon">
+
+<h2>Emergency Alert System</h2>
+
+</div>
+
+
+<div class="container">
+
+<img class="alert-icon" src="https://img.icons8.com/color/240/alarm.png" alt="Medical emergency alarm icon" title="Medical emergency alarm icon">
+
+<h2>Medical Emergency</h2>
+
+<p>If you need urgent medical help, press the emergency button.</p>
+
+<button class="alert-btn" onclick="sendAlert()">🚨 Send Emergency Alert</button>
+
+<button class="call-btn" onclick="callDoctor()">📞 Call Doctor</button>
+
+<button class="loc-btn" onclick="getLocation()">📍 Send Location</button>
+
+
+<div class="status" id="status">
+
+<p id="msg"></p>
+
+</div>
+
+</div>
+
+
+<script>
+
+function sendAlert(){
+
+document.getElementById("status").style.display="block";
+
+document.getElementById("msg").innerHTML="Emergency alert sent to nearby health workers.";
+
+}
+
+function callDoctor(){
+
+window.location.href="tel:+911234567890";
+
+}
+
+function getLocation(){
+
+if(navigator.geolocation){
+
+navigator.geolocation.getCurrentPosition(function(position){
+
+let lat=position.coords.latitude;
+
+let lon=position.coords.longitude;
+
+document.getElementById("status").style.display="block";
+
+document.getElementById("msg").innerHTML="Location sent: "+lat+" , "+lon;
+
+});
+
+}
+
+else{
+
+alert("Location not supported");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Symptom Checker</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f4f7f6;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+/* Main container */
+
+.container{
+width:900px;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+text-align:center;
+}
+
+/* Header */
+
+.header{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+margin-bottom:20px;
+}
+
+.header img{
+width:40px;
+}
+
+h1{
+color:#2e8b57;
+}
+
+/* Doctor image */
+
+.doctor{
+width:140px;
+margin:10px auto;
+}
+
+/* Symptoms section */
+
+.symptoms{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+margin-top:20px;
+}
+
+.symptoms button{
+
+display:flex;
+align-items:center;
+gap:6px;
+
+padding:10px 14px;
+
+border:none;
+
+border-radius:20px;
+
+background:#e8f5f2;
+
+cursor:pointer;
+
+font-size:14px;
+}
+
+.symptoms img{
+width:18px;
+}
+
+.symptoms button:hover{
+background:#2e8b57;
+color:white;
+}
+
+/* Text input */
+
+input{
+width:70%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+margin-top:20px;
+}
+
+/* Button */
+
+.check{
+margin-top:20px;
+padding:12px 25px;
+background:#2e8b57;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:16px;
+}
+
+.check:hover{
+background:#246b45;
+}
+
+/* Result box */
+
+.result{
+margin-top:25px;
+padding:20px;
+background:#f1f9f7;
+border-radius:10px;
+display:none;
+}
+
+.result h3{
+color:#2e8b57;
+margin-bottom:10px;
+}
+
+.symptom-note{
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<img src="https://img.icons8.com/color/96/artificial-intelligence.png" alt="Artificial intelligence icon">
+
+<h1>AI Symptom Checker</h1>
+
+</div>
+
+<img class="doctor" src="https://img.icons8.com/color/240/doctor-female.png" alt="Female doctor icon">
+
+<p>Select your basic symptoms</p>
+
+<div class="symptoms">
+
+<button>
+<img src="https://img.icons8.com/color/48/thermometer.png" alt="Fever icon">
+Fever
+</button>
+
+<button>
+<img src="https://img.icons8.com/color/48/coughing.png" alt="Cough icon">
+Cough
+</button>
+
+<button>
+<img src="https://img.icons8.com/color/48/headache.png" alt="Headache icon">
+Headache
+</button>
+
+<button>
+<img src="https://img.icons8.com/color/48/illness.png" alt="Sore throat icon">
+Sore Throat
+</button>
+
+<button>
+<img src="https://img.icons8.com/color/48/back-pain.png" alt="Body pain icon">
+Body Pain
+</button>
+
+<button>
+<img src="https://img.icons8.com/color/48/confused.png" alt="Dizziness icon">
+Dizziness
+</button>
+
+<button>
+<img src="https://img.icons8.com/color/48/sleeping.png" alt="Fatigue icon"/>
+Fatigue
+</button>
+
+<button>
+<img src="https://img.icons8.com/color/48/stomachache.png" alt="Stomach pain icon">
+Stomach Pain
+</button>
+
+<button>
+<img src="https://img.icons8.com/color/48/heart-with-pulse.png" alt="Chest pain icon">
+Chest Pain
+</button>
+
+</div>
+
+<p class="symptom-note">If your symptom is not listed, type it below</p>
+
+<input type="text" id="symptom" placeholder="Type your symptom here">
+
+<br>
+
+<button class="check" onclick="checkSymptom()">Check Symptoms</button>
+
+<div class="result" id="result">
+
+<h3>Possible Condition</h3>
+
+<p id="disease"></p>
+
+<h3>Recommendation</h3>
+
+<p id="advice"></p>
+
+</div>
+
+</div>
+
+<script>
+
+function checkSymptom(){
+
+let symptom=document.getElementById("symptom").value.toLowerCase();
+
+document.getElementById("result").style.display="block";
+
+if(symptom.includes("fever") || symptom.includes("cough")){
+
+document.getElementById("disease").innerHTML="Possible Viral Infection or Flu";
+
+document.getElementById("advice").innerHTML="Drink fluids, take rest, and consult doctor if symptoms persist.";
+
+}
+
+else if(symptom.includes("chest pain")){
+
+document.getElementById("disease").innerHTML="Possible Heart or Respiratory Issue";
+
+document.getElementById("advice").innerHTML="Visit nearest hospital immediately.";
+
+}
+
+else{
+
+document.getElementById("disease").innerHTML="Symptom requires further medical analysis.";
+
+document.getElementById("advice").innerHTML="Consult a healthcare professional.";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rural Healthcare - Create Account</title>
+
+<style>
+
+/* Reset */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, sans-serif;
+}
+
+/* Background */
+
+body{
+
+height:100vh;
+
+background-image:url("images/bg.jpg");
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+/* Form Container */
+
+.container{
+
+width:420px;
+padding:35px;
+
+background:rgba(255,255,255,0.95);
+
+border-radius:12px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+text-align:center;
+
+}
+
+/* Titles */
+
+.container h1{
+
+color:#2e8b57;
+margin-bottom:5px;
+
+}
+
+.container h2{
+
+margin-bottom:25px;
+color:#444;
+
+}
+
+/* Input Fields */
+
+.container input{
+
+width:100%;
+padding:12px;
+
+margin:10px 0;
+
+border-radius:6px;
+border:1px solid #ccc;
+
+font-size:14px;
+
+}
+
+/* Button */
+
+.container button{
+
+width:100%;
+padding:13px;
+
+background:#2e8b57;
+
+border:none;
+border-radius:6px;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+margin-top:10px;
+
+}
+
+/* Button Hover */
+
+.container button:hover{
+
+background:#246b45;
+
+}
+
+/* Login link */
+
+.login-link{
+
+margin-top:20px;
+font-size:14px;
+
+}
+
+.login-link a{
+
+color:#2e8b57;
+font-weight:bold;
+text-decoration:none;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>RURAL HEALTHCARE</h1>
+<h2>Create New Account</h2>
+
+<form action="http://localhost:8000/auth/register" method="POST">
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="text" placeholder="Username" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="tel" placeholder="Mobile Number" required>
+
+<input type="password" placeholder="Password" required>
+
+<input type="password" placeholder="Confirm Password" required>
+
+<button type="submit">Create Account</button>
+
+</form>
+
+<p class="login-link">
+Already have an account?
+<a href="login.html">Login Here</a>
+</p>
+
+</div>
+
+</body>
+</html>

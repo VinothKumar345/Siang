@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Health Worker Dashboard</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f4f7f6;
+}
+
+/* Header */
+
+.header{
+background:#2e8b57;
+color:white;
+padding:15px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.header img{
+width:35px;
+}
+
+/* Dashboard */
+
+.dashboard{
+
+width:900px;
+
+margin:40px auto;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+}
+
+/* Card */
+
+.card{
+
+background:white;
+
+padding:25px;
+
+border-radius:10px;
+
+text-align:center;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+.card img{
+width:60px;
+margin-bottom:10px;
+}
+
+.card h3{
+color:#2e8b57;
+margin-bottom:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<img src="https://img.icons8.com/color/96/medical-doctor.png" alt="Doctor icon">
+
+<h2>Community Health Worker Dashboard</h2>
+
+</div>
+
+
+<div class="dashboard">
+
+<div class="card">
+
+<img src="https://img.icons8.com/color/96/group.png" alt="Patient records icon">
+
+<h3>Patient Records</h3>
+
+<p>View and manage village patient records.</p>
+
+</div>
+
+
+<div class="card">
+
+<img src="https://img.icons8.com/color/96/pregnant.png" alt="Pregnancy monitoring icon">
+
+<h3>Pregnancy Monitoring</h3>
+
+<p>Track pregnant women health status.</p>
+
+</div>
+
+
+<div class="card">
+
+<img src="https://img.icons8.com/color/96/medical-doctor.png" alt="Health camps icon">
+
+<h3>Health Camps</h3>
+
+<p>Schedule and manage health camps.</p>
+
+</div>
+
+
+<div class="card">
+
+<img src="https://img.icons8.com/color/96/combo-chart.png" alt="Disease reports icon">
+
+<h3>Disease Reports</h3>
+
+<p>Monitor disease cases in rural areas.</p>
+
+</div>
+
+
+<div class="card">
+
+<img src="https://img.icons8.com/color/96/hospital.png" alt="Hospital referrals icon">
+
+<h3>Hospital Referrals</h3>
+
+<p>Refer patients to nearby hospitals.</p>
+
+</div>
+
+
+<div class="card">
+
+<img src="https://img.icons8.com/color/96/siren.png" alt="Emergency alerts icon">
+
+<h3>Emergency Alerts</h3>
+
+<p>Respond to emergency medical alerts.</p>
+
+</div>
+
+</div>
+
+</body>
+</html>

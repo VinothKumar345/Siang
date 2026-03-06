@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rural Healthcare Login</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial, sans-serif;
+
+background-image:url("images/bg.jpg");
+background-size:cover;
+background-position:center;
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.login-container{
+
+background:rgba(255,255,255,0.9);
+padding:40px;
+
+width:360px;
+
+border-radius:10px;
+box-shadow:0px 10px 25px rgba(0,0,0,0.2);
+
+text-align:center;
+}
+
+h1{
+color:#2e8b57;
+margin-bottom:5px;
+}
+
+h2{
+margin-bottom:25px;
+}
+
+input{
+
+width:100%;
+padding:12px;
+
+margin:10px 0;
+
+border-radius:6px;
+border:1px solid #ccc;
+
+font-size:14px;
+}
+
+button{
+
+width:100%;
+padding:12px;
+
+background:#2e8b57;
+border:none;
+
+color:white;
+font-size:16px;
+
+border-radius:6px;
+
+cursor:pointer;
+}
+
+button:hover{
+background:#246b45;
+}
+
+.forgot{
+
+display:block;
+text-align:right;
+
+font-size:13px;
+
+margin-bottom:10px;
+}
+
+.signup{
+
+margin-top:20px;
+}
+
+.signup a{
+
+color:#2e8b57;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<h1>RURAL HEALTHCARE</h1>
+<h2>Login to Your Account</h2>
+
+<form action="http://localhost:8000/auth/login" method="POST">
+
+<input type="text" placeholder="Username" required>
+
+<input type="password" placeholder="Password" required>
+
+<a class="forgot" href="#">Forgot Password?</a>
+
+<button type="submit">Log In</button>
+<script src='https://www.noupe.com/embed/019cbcac9a3b73a5b2fe86a2ad5abf7d6ca3.js'></script>
+<p class="signup">
+Don't have an account?
+<a href="register.html">Create New Account</a>
+</p>
+
+</form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rural Healthcare Dashboard</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#eef2f1;
+}
+
+/* Header */
+
+.top-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:#2e8b57;
+}
+
+.user{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+/* Navbar */
+
+.navbar{
+background:#2e8b57;
+color:white;
+padding:15px 30px;
+border-radius:10px;
+margin:0 40px;
+font-size:18px;
+}
+
+/* Container */
+
+.container{
+padding:30px 40px;
+}
+
+/* Card grid */
+
+.row{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.card img{
+width:60px;
+}
+
+.card h3{
+color:#2e8b57;
+margin-bottom:5px;
+}
+
+/* Analytics section */
+
+.analytics{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:20px;
+margin-top:20px;
+}
+
+.chart{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.chart img{
+width:100%;
+}
+
+.voice{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.voice img{
+width:80px;
+margin-top:10px;
+}
+
+/* Community stats */
+
+.community{
+background:white;
+padding:20px;
+border-radius:12px;
+margin-top:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+display:flex;
+justify-content:space-around;
+}
+
+.stat{
+text-align:center;
+}
+
+.stat h2{
+color:#2e8b57;
+font-size:32px;
+}
+
+/* Footer */
+
+.footer{
+background:white;
+padding:20px;
+border-radius:12px;
+margin-top:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+button{
+background:#2e8b57;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:6px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+
+<div class="top-header">
+
+<div class="logo">RURAL HEALTHCARE</div>
+
+<div class="user">
+Welcome Dr. John Smith
+<img src="https://img.icons8.com/color/48/doctor-male.png" alt="Doctor">
+</div>
+
+</div>
+
+<div class="navbar">
+Dashboard
+</div>
+
+
+<div class="container">
+
+<!-- Row 1 -->
+
+<div class="row">
+
+<div class="card">
+<img src="https://img.icons8.com/color/96/artificial-intelligence.png" alt="AI Symptom Prediction">
+<div>
+<h3>AI Symptom Prediction</h3>
+<p>Health risk prediction using AI</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://img.icons8.com/fluency/96/chatbot.png" alt="Health Chatbot">
+<div>
+<h3>Health Chatbot</h3>
+<p>Ask health questions instantly</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://img.icons8.com/color/96/book.png" alt="Medical Knowledge Library">
+<div>
+<h3>Medical Knowledge Library</h3>
+<p>Offline medicine guides</p>
+</div>
+</div>
+
+</div>
+
+
+<!-- Row 2 -->
+
+<div class="row">
+
+<div class="card">
+<img src="https://img.icons8.com/color/96/microscope.png" alt="Disease Detection">
+<div>
+<h3>Disease Detection</h3>
+<p>Detect disease using images</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://img.icons8.com/color/96/pregnant.png" alt="Pregnancy Monitoring">
+<div>
+<h3>Pregnancy Monitoring</h3>
+<p>Track pregnancy health</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://img.icons8.com/color/96/hospital.png" alt="Hospital Finder">
+<div>
+<h3>Hospital Finder</h3>
+<p>Locate nearby hospitals</p>
+</div>
+</div>
+
+</div>
+
+
+<!-- Analytics -->
+
+<div class="analytics">
+
+<div class="chart">
+
+<h3>Disease Trend Analytics</h3>
+
+<!--<img src="https://img.icons8.com/color/96/line-chart.png" alt="Disease Trend Analytics">-->
+
+</div>
+
+<div class="voice">
+
+<h3>Voice Assistant</h3>
+
+<img src="https://img.icons8.com/color/96/microphone.png" alt="Voice Assistant">
+
+<p>Use local language voice commands</p>
+
+</div>
+
+</div>
+
+
+<!-- Community health worker -->
+
+<div class="community">
+
+<div class="stat">
+
+<h2>12</h2>
+<p>Health Camps Scheduled</p>
+
+</div>
+
+<div class="stat">
+
+<h2>89</h2>
+<p>Patients Monitored</p>
+
+</div>
+
+</div>
+
+
+<!-- Footer -->
+
+<div class="footer">
+
+<p>Ask in your local language for healthcare assistance</p>
+
+<button>Start Voice Chat</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
